@@ -10,8 +10,6 @@ const msgWin = document.querySelector('.message-win');
 const msgLose = document.querySelector('.message-lose');
 const msgStart = document.querySelector('.message-start');
 
-let previousState = null;
-
 function updateView() {
   const state = game.getState();
   const score = game.getScore();
@@ -20,39 +18,17 @@ function updateView() {
   cells.forEach((cell, index) => {
     const r = Math.floor(index / 4);
     const c = index % 4;
-
     const value = state[r][c];
-    const prevValue = previousState
-      ? previousState[r][c]
-      : 0;
 
     cell.className = 'field-cell';
 
     if (value > 0) {
       cell.textContent = value;
       cell.classList.add(`field-cell--${value}`);
-
-      if (prevValue === 0) {
-        cell.classList.add('tile-new');
-
-        setTimeout(() => {
-          cell.classList.remove('tile-new');
-        }, 180);
-      }
-
-      if (prevValue > 0 && value > prevValue) {
-        cell.classList.add('tile-merged');
-
-        setTimeout(() => {
-          cell.classList.remove('tile-merged');
-        }, 180);
-      }
     } else {
       cell.textContent = '';
     }
   });
-
-  previousState = state.map(row => [...row]);
 
   scoreElement.textContent = score;
 
@@ -84,7 +60,6 @@ startBtn.addEventListener('click', (events) => {
     game.start();
   } else {
     game.restart();
-    previousState = null;
   }
   updateView();
 });
@@ -94,26 +69,19 @@ document.addEventListener('keydown', (events) => {
     return;
   }
 
-  // eslint-disable-next-line max-len
-  const gameKeys = ['ArrowLeft', 'ArrowRight', 'ArrowUp', 'ArrowDown', 'w', 'a', 's', 'd', 'W', 'A', 'S', 'D'];
-
-  if (!gameKeys.includes(events.key)) {
-    return;
-  }
-
-  if (events.key === 'ArrowLeft' || events.key.toLowerCase() === 'a') {
+  if (events.key === 'ArrowLeft') {
     game.moveLeft();
   }
 
-  if (events.key === 'ArrowRight' || events.key.toLowerCase() === 'd') {
+  if (events.key === 'ArrowRight') {
     game.moveRight();
   }
 
-  if (events.key === 'ArrowUp' || events.key.toLowerCase() === 'w') {
+  if (events.key === 'ArrowUp') {
     game.moveUp();
   }
 
-  if (events.key === 'ArrowDown' || events.key.toLowerCase() === 's') {
+  if (events.key === 'ArrowDown') {
     game.moveDown();
   }
 

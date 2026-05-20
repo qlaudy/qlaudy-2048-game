@@ -41,6 +41,7 @@ body {
   animation: tileMerge 0.18s ease;
 }
 
+
 .field-cell {
   background: #d6cdc4;
   width: 75px;
@@ -56,56 +57,17 @@ body {
     color 0.15s ease,
     transform 0.12s ease;
 
-  &--2 {
-    background: #eee4da;
-  }
-  &--4 {
-    background: #ede0c8;
-  }
-  &--8 {
-    background: #f2b179;
-    color: #f9f6f2;
-  }
-  &--16 {
-    background: #f59563;
-    color: #f9f6f2;
-  }
-  &--32 {
-    background: #f67c5f;
-    color: #f9f6f2;
-  }
-  &--64 {
-    background: #f65e3b;
-    color: #f9f6f2;
-  }
-  &--128 {
-    background: #edcf72;
-    color: #f9f6f2;
-  }
-  &--256 {
-    background: #edcc61;
-    color: #f9f6f2;
-  }
-  &--512 {
-    background: #edc850;
-    color: #f9f6f2;
-  }
-  &--1024 {
-    background: #edc53f;
-    color: #f9f6f2;
-  }
-  &--2048 {
-    background: #edc22e;
-    color: #f9f6f2;
+  &.tile-merged {
+    animation: tileMerge 0.15s ease-in-out;
   }
 
-  &--128,
-  &--256,
-  &--512,
-  &--1024,
-  &--2048 {
-    box-shadow: 0 0 8px rgba(237, 194, 46, 0.22);
-  }
+ &--128,
+&--256,
+&--512,
+&--1024,
+&--2048 {
+  box-shadow: 0 0 8px rgba(237, 194, 46, 0.25);
+}
 }
 
 .game-field {

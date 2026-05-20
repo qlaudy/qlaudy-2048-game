@@ -93,10 +93,12 @@ body {
   &--1024 {
     background: #edc53f;
     color: #f9f6f2;
+    // box-shadow: 0 0 18px 4px rgba(#edc53f, 0.7);
   }
   &--2048 {
     background: #edc22e;
     color: #f9f6f2;
+    // box-shadow: 0 0 8px rgba(237, 194, 46, 0.25);
   }
 
   &--128,

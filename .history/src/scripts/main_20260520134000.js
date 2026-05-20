@@ -32,6 +32,7 @@ function updateView() {
       cell.textContent = value;
       cell.classList.add(`field-cell--${value}`);
 
+      // NEW TILE
       if (prevValue === 0) {
         cell.classList.add('tile-new');
 
@@ -40,6 +41,7 @@ function updateView() {
         }, 180);
       }
 
+      // MERGED TILE
       if (prevValue > 0 && value > prevValue) {
         cell.classList.add('tile-merged');
 

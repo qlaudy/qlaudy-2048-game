@@ -18,7 +18,6 @@ class Game {
    *
    * If passed, the board will be initialized with the provided
    * initial state.
-   */
   constructor(initialState) {
     // eslint-disable-next-line no-console
     console.log(initialState);

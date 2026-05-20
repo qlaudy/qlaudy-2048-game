@@ -6,7 +6,6 @@
  * Feel free to add more props and methods if needed.
  */
 class Game {
-  /**
    *
    * @param {number[][]} initialState
    * The initial state of the board.
@@ -18,7 +17,6 @@ class Game {
    *
    * If passed, the board will be initialized with the provided
    * initial state.
-   */
   constructor(initialState) {
     // eslint-disable-next-line no-console
     console.log(initialState);

@@ -20,11 +20,9 @@ function updateView() {
   cells.forEach((cell, index) => {
     const r = Math.floor(index / 4);
     const c = index % 4;
-
     const value = state[r][c];
-    const prevValue = previousState
-      ? previousState[r][c]
-      : 0;
+
+    const prevValue = previousState ? previousState[r][c] : 0;
 
     cell.className = 'field-cell';
 
@@ -32,22 +30,16 @@ function updateView() {
       cell.textContent = value;
       cell.classList.add(`field-cell--${value}`);
 
-      if (prevValue === 0) {
-        cell.classList.add('tile-new');
-
-        setTimeout(() => {
-          cell.classList.remove('tile-new');
-        }, 180);
-      }
-
+      // 3. ОКРЕМО перевіряємо, чи потрібно запустити анімацію злиття
       if (prevValue > 0 && value > prevValue) {
         cell.classList.add('tile-merged');
 
         setTimeout(() => {
           cell.classList.remove('tile-merged');
-        }, 180);
+        }, 150);
       }
     } else {
+      // Клітинка порожня — прибираємо текст
       cell.textContent = '';
     }
   });

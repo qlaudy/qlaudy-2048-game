@@ -81,22 +81,27 @@ body {
   &--128 {
     background: #edcf72;
     color: #f9f6f2;
+    box-shadow: 0 0 10px 1px rgba(#edcf72, 0.5);
   }
   &--256 {
     background: #edcc61;
     color: #f9f6f2;
+    box-shadow: 0 0 12px 2px rgba(#edcc61, 0.6);
   }
   &--512 {
     background: #edc850;
     color: #f9f6f2;
+    box-shadow: 0 0 15px 3px rgba(#edc850, 0.65);
   }
   &--1024 {
     background: #edc53f;
     color: #f9f6f2;
+    box-shadow: 0 0 18px 4px rgba(#edc53f, 0.7);
   }
   &--2048 {
     background: #edc22e;
     color: #f9f6f2;
+    // box-shadow: 0 0 8px rgba(237, 194, 46, 0.25);
   }
 
   &--128,

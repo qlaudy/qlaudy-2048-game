@@ -7,6 +7,7 @@
  */
 class Game {
   /**
+   * Creates a new game instance.
    *
    * @param {number[][]} initialState
    * The initial state of the board.
@@ -184,9 +185,7 @@ class Game {
     return this.board;
   }
 
-  /**
-   * Returns the current game status.
-   *
+
    * @returns {string} One of: 'idle', 'playing', 'win', 'lose'
    *
    * `idle` - the game has not started yet (the initial state);

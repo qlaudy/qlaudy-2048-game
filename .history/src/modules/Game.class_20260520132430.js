@@ -7,6 +7,7 @@
  */
 class Game {
   /**
+   * Creates a new game instance.
    *
    * @param {number[][]} initialState
    * The initial state of the board.
@@ -197,6 +198,10 @@ class Game {
   getStatus() {
     return this.status;
   }
+
+  /**
+   * Starts the game.
+   */
   start() {
     if (this.status === 'idle') {
       this.status = 'playing';
@@ -204,7 +209,9 @@ class Game {
       this.setupRandomTile();
     }
   }
-
+  /**
+   * Resets the game.
+   */
   restart() {
     this.board = [
       [0, 0, 0, 0],
